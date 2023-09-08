@@ -13,19 +13,19 @@ const Navbar = () => {
         </h1>
         <div className="flex h-full flex-1 gap-x-2">
           <div className="relative h-6 w-6 md:h-8 md:w-8">
-            <Image src="/socials/linkedin.png" alt="" fill />
+            <Image src="/socials/linkedin.png" alt="" fill sizes="30px"  />
           </div>
           <div className="relative h-6 w-6 md:h-8 md:w-8 block dark:hidden">
-            <Image src="/socials/github.png" alt="" fill />
+            <Image src="/socials/github.png" alt="" fill sizes="30px" />
           </div>
           <div className="relative h-6 w-6 md:h-8 md:w-8 hidden dark:block">
-            <Image src="/socials/githubdark.png" alt="" fill />
+            <Image src="/socials/githubdark.png" alt="" fill sizes="30px" />
           </div>
           <div className="relative h-6 w-6 md:h-8 md:w-8">
-            <Image src="/socials/instagram.png" alt="" fill />
+            <Image src="/socials/instagram.png" alt="" fill sizes="30px" />
           </div>
           <div className="relative h-6 w-6 md:h-8 md:w-8">
-            <Image src="/socials/pinterest.png" alt="" fill />
+            <Image src="/socials/pinterest.png" alt="" fill sizes="30px" />
           </div>
         </div>
       </div>
