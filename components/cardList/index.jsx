@@ -1,10 +1,14 @@
-import React from 'react';
-import Pagination from '../pagination';
+import React from "react";
+import Pagination from "../pagination";
+import Card from "../card";
 
 const CardList = () => {
   return (
-    <div>
-      Cardlist
+    <div className="flex-[5]">
+      <h1 className="my-10 text-4xl">Recent Posts</h1>
+      <div className="posts">
+        <Card />
+      </div>
       <Pagination />
     </div>
   );

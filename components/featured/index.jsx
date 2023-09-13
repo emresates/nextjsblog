@@ -4,23 +4,23 @@ import React from "react";
 const Featured = () => {
   return (
     <div className="mt-10">
-      <h1 className="text-7xl font-light">
+      <h1 className="text-3xl font-light md:text-5xl xl:text-7xl">
         <b className="font-bold">Hey, Secenory here!</b> Discover my stories and
         creative ideas
       </h1>
-      <div className="mt-10 flex items-center gap-10">
-        <div className="relative h-96 flex-1 overflow-hidden rounded-lg">
+      <div className="mt-10 block items-center gap-10 md:flex">
+        <div className="relative h-52 flex-1 overflow-hidden rounded-lg sm:h-72 md:h-96">
           <Image
             src="/img1.jpg"
-            alt=""
+            alt="img1"
             fill
             sizes="600px"
             className="object-cover"
           />
         </div>
-        <div className="flex flex-1 flex-col gap-5">
-          <h1 className="text-4xl">Lorem ipsum dolor sit.</h1>
-          <p className="text-xl font-light">
+        <div className="mt-6 flex flex-1 flex-col gap-5 md:mt-0">
+          <h1 className="text-2xl md:text-4xl">Lorem ipsum dolor sit.</h1>
+          <p className="text-base md:text-xl font-light">
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
             Exercitationem praesentium explicabo tempore, quos est consequuntur
             eum sint expedita quaerat officia enim veritatis! Sunt sit fugiat
