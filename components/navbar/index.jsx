@@ -30,7 +30,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className="flex flex-1 justify-end gap-x-4 md:justify-center md:gap-x-2">
+      <div className="flex z-50 flex-1 justify-end gap-x-4 md:justify-center md:gap-x-2">
         <ThemeToggle />
         <Link href="/" className="hidden md:block">
           Homepage

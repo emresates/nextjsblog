@@ -4,11 +4,11 @@ import React from "react";
 
 const Card = () => {
   return (
-    <div className="mb-10 flex items-center gap-10">
+    <div className="mb-10 block xl:flex items-center gap-10">
       <div className="relative h-80 flex-1">
         <Image src="/p1.jpeg" alt="demo" fill className="object-cover" />
       </div>
-      <div className="flex flex-1 flex-col gap-7">
+      <div className="flex flex-1 flex-col mt-2 gap-2 sm:gap-4">
         <div>
           <span className="text-gray-500">11.02.2023 - </span>
           <span className="font-semibold capitalize text-red-300">culture</span>
