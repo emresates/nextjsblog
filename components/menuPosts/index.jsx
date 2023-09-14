@@ -13,6 +13,7 @@ const MenuPosts = ({ withImage }) => {
               alt=""
               fill
               className="rounded-full border-2 object-cover"
+              sizes="50px"
             />
           </div>
         )}
@@ -38,6 +39,7 @@ const MenuPosts = ({ withImage }) => {
               alt=""
               fill
               className="rounded-full border-2 object-cover"
+              sizes="50px"
             />
           </div>
         )}
@@ -63,6 +65,7 @@ const MenuPosts = ({ withImage }) => {
               alt=""
               fill
               className="rounded-full border-2 object-cover"
+              sizes="50px"
             />
           </div>
         )}
@@ -88,6 +91,7 @@ const MenuPosts = ({ withImage }) => {
               alt=""
               fill
               className="rounded-full border-2 object-cover"
+              sizes="50px"
             />
           </div>
         )}

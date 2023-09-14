@@ -7,7 +7,9 @@ const Footer = () => {
     <div className="mt-10 flex flex-col items-center justify-between py-4 sm:flex-row">
       <div className="flex flex-1 flex-col gap-3">
         <div className="flex items-center gap-2">
-          <Image width={50} height={50} src="/eawhite.png" alt="ealogo" />
+          <div className="relative w-12 aspect-square">
+            <Image src="/eawhite.png" alt="ealogo" fill sizes="30px" className="object-cover" />
+          </div>
           <h1 className="text-xl">Secenory Blog</h1>
         </div>
         <p className="font-light">
