@@ -2,6 +2,7 @@ import Navbar from "@/components/navbar";
 import "./globals.css";
 import { Josefin_Sans } from "next/font/google";
 import Footer from "@/components/footer";
+import AuthProvider from "@/providers/AuthProvider";
 
 const inter = Josefin_Sans({ subsets: ["latin"] });
 
@@ -14,15 +15,17 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div
-          className={`${inter.className} min-h-screen bg-slate-200 text-black dark:bg-slate-900 dark:text-white`}
-        >
-          <div className="mx-auto w-full px-6 sm:w-11/12 md:w-5/6 xl:px-20 xl:w-4/5">
-            <Navbar />
-            {children}
-            <Footer />
+        <AuthProvider>
+          <div
+            className={`${inter.className} min-h-screen bg-slate-200 text-black dark:bg-slate-900 dark:text-white`}
+          >
+            <div className="mx-auto w-full px-6 sm:w-11/12 md:w-5/6 xl:w-4/5 xl:px-20">
+              <Navbar />
+              {children}
+              <Footer />
+            </div>
           </div>
-        </div>
+        </AuthProvider>
       </body>
     </html>
   );

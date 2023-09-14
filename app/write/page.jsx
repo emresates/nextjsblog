@@ -1,6 +1,8 @@
 "use client";
+import { useSession } from "next-auth/react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 const ReactQuill = dynamic(
   () => {
@@ -14,6 +16,16 @@ import "react-quill/dist/quill.bubble.css";
 const Write = () => {
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState("");
+
+  const { data, status } = useSession();
+
+  const router = useRouter();
+  if (status === "loading") {
+    return <div>Loading...</div>;
+  }
+  if (status === "authenticated") {
+    router.push("/");
+  }
 
   return (
     <div className="">
@@ -59,7 +71,7 @@ const Write = () => {
             <Image src="/video.png" alt="" width={16} height={16} />
           </button>
         </div>
-        
+
         <ReactQuill
           theme="bubble"
           value={value}

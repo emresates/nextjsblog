@@ -12,7 +12,7 @@ const CategoryList = () => {
           className={`flex h-20 w-full items-center justify-center gap-x-2 rounded-xl bg-slate-400 capitalize sm:w-[45%] md:w-1/4 lg:w-1/5 xl:w-[15%]`}
         >
           <div className="relative h-10 w-10">
-            <Image src="/style.png" alt="" fill className="rounded-full" />
+            <Image src="/style.png" alt="" fill className="rounded-full" sizes="30px" />
           </div>
           style
         </Link>
@@ -21,7 +21,7 @@ const CategoryList = () => {
           className={`flex h-20 w-full items-center justify-center gap-x-2 rounded-xl bg-pink-400 capitalize sm:w-[45%] md:w-1/4 lg:w-1/5 xl:w-[15%]`}
         >
           <div className="relative h-10 w-10">
-            <Image src="/fashion.png" alt="" fill className="rounded-full" />
+            <Image src="/fashion.png" alt="" fill className="rounded-full" sizes="30px" />
           </div>
           fashion
         </Link>
@@ -30,7 +30,7 @@ const CategoryList = () => {
           className={`flex h-20 w-full items-center justify-center gap-x-2 rounded-xl bg-orange-400 capitalize sm:w-[45%] md:w-1/4 lg:w-1/5 xl:w-[15%]`}
         >
           <div className="relative h-10 w-10">
-            <Image src="/food.png" alt="" fill className="rounded-full" />
+            <Image src="/food.png" alt="" fill className="rounded-full" sizes="30px" />
           </div>
           food
         </Link>
@@ -39,7 +39,7 @@ const CategoryList = () => {
           className={`flex h-20 w-full items-center justify-center gap-x-2 rounded-xl bg-blue-300 capitalize sm:w-[45%] md:w-1/4 lg:w-1/5 xl:w-[15%]`}
         >
           <div className="relative h-10 w-10">
-            <Image src="/travel.png" alt="" fill className="rounded-full" />
+            <Image src="/travel.png" alt="" fill className="rounded-full" sizes="30px" />
           </div>
           travel
         </Link>
@@ -48,7 +48,7 @@ const CategoryList = () => {
           className={`flex h-20 w-full items-center justify-center gap-x-2 rounded-xl bg-lime-800 capitalize sm:w-[45%] md:w-1/4 lg:w-1/5 xl:w-[15%]`}
         >
           <div className="relative h-10 w-10">
-            <Image src="/culture.png" alt="" fill className="rounded-full" />
+            <Image src="/culture.png" alt="" fill className="rounded-full" sizes="30px" />
           </div>
           culture
         </Link>
@@ -57,7 +57,7 @@ const CategoryList = () => {
           className={`flex h-20 w-full items-center justify-center gap-x-2 rounded-xl bg-emerald-800 capitalize sm:w-[45%] md:w-1/4 lg:w-1/5 xl:w-[15%]`}
         >
           <div className="relative h-10 w-10">
-            <Image src="/coding.png" alt="" fill className="rounded-full" />
+            <Image src="/coding.png" alt="" fill className="rounded-full" sizes="30px" />
           </div>
           coding
         </Link>
