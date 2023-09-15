@@ -26,7 +26,7 @@ const SinglePage = async ({ params }) => {
         {data.image && (
           <div className="relative my-4 h-56 flex-1 md:my-0 md:h-80">
             <Image
-              src="/p1.jpeg"
+              src={data.image}
               alt=""
               fill
               className="rounded-3xl object-cover"
