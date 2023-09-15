@@ -20,7 +20,6 @@ const SinglePage = async ({ params }) => {
 
   const data = await getData(slug);
 
-  console.log(data);
   return (
     <div className="">
       <div className="block items-center gap-8 md:flex md:flex-row-reverse">
@@ -52,7 +51,7 @@ const SinglePage = async ({ params }) => {
             )}
             <div className="flex flex-col gap-1 text-gray-400">
               <span className="text-lg">{data.user.name}</span>
-              <span>01.01.2023</span>
+              <span>{data.createdAt.substring(0, 10)}</span>
             </div>
           </div>
         </div>
@@ -65,7 +64,7 @@ const SinglePage = async ({ params }) => {
           />
 
           <div>
-            <Comments />
+            <Comments postSlug={slug} />
           </div>
         </div>
         <Menu />

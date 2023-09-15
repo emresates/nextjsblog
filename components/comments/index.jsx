@@ -1,10 +1,27 @@
+"use client";
+import { useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import useSWR from "swr";
 
-const Comments = () => {
-  const status = "authenticated";
+const fetcher = async (url) => {
+  const res = await fetch(url);
+  const data = await res.json();
 
+  if (!res.ok) {
+    throw new Error(data.message);
+  }
+
+  return data;
+};
+
+const Comments = ({ postSlug }) => {
+  const { status } = useSession();
+  const { data, isLoading } = useSWR(
+    `http://localhost:3000/api/comments?postSlug=${postSlug}`,
+    fetcher,
+  );
   return (
     <div className="mt-14">
       <h1 className="mb-7 text-4xl text-gray-500">Comments</h1>
@@ -22,29 +39,32 @@ const Comments = () => {
         <Link href="/login">Login to write a comment</Link>
       )}
       <div className="mt-8">
-        <div className="mb-8">
-          <div className="mb-4 flex items-center gap-4">
-            <div className="relative h-12 w-12">
-              <Image
-                src="/p1.jpeg"
-                alt="user"
-                fill
-                sizes="30px"
-                className="rounded-full object-cover"
-              />
-            </div>
-            <div className="flex flex-col gap-1 text-gray-400">
-              <span className="font-bold">John Doe</span>
-              <span className="text-base">11.02.2023</span>
-            </div>
-          </div>
-          <p className="text-base font-light">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam
-            dolor quae excepturi, neque expedita exercitationem ut ipsum earum
-            incidunt voluptatum voluptatibus aliquam aliquid officiis ipsam at
-            omnis itaque nemo cumque!
-          </p>
-        </div>
+        {isLoading
+          ? "Loading"
+          : data.map((comment) => (
+              <div className="mb-8" key={comment.id}>
+                <div className="mb-4 flex items-center gap-4">
+                  <div className="relative h-12 w-12">
+                    {comment.user.image && (
+                      <Image
+                        src={comment.user.image}
+                        alt="user"
+                        fill
+                        sizes="30px"
+                        className="rounded-full object-cover"
+                      />
+                    )}
+                  </div>
+                  <div className="flex flex-col gap-1 text-gray-400">
+                    <span className="font-bold">{comment.user.name}</span>
+                    <span className="text-base">
+                      {comment.createdAt.substring(0, 10)}
+                    </span>
+                  </div>
+                </div>
+                <p className="text-base font-light">{comment.desc}</p>
+              </div>
+            ))}
       </div>
     </div>
   );
