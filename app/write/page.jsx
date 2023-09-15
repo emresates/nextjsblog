@@ -17,7 +17,7 @@ const Write = () => {
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState("");
 
-  const { data, status } = useSession();
+  const { status } = useSession();
 
   const router = useRouter();
   if (status === "loading") {

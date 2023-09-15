@@ -4,8 +4,7 @@ import { useRouter } from "next/navigation";
 import React from "react";
 
 const Login = () => {
-  const { data, status } = useSession();
-
+  const { status } = useSession();
   const router = useRouter();
   if (status === "loading") {
     return <div>Loading...</div>;

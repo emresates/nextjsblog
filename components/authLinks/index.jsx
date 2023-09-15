@@ -8,7 +8,6 @@ const AuthLinks = () => {
 
   const [open, setOpen] = useState(false);
 
-  console.log(status);
   return (
     <>
       {status === "unauthenticated" ? (
