@@ -18,10 +18,23 @@ const fetcher = async (url) => {
 
 const Comments = ({ postSlug }) => {
   const { status } = useSession();
-  const { data, isLoading } = useSWR(
+  const { data, mutate, isLoading } = useSWR(
     `http://localhost:3000/api/comments?postSlug=${postSlug}`,
     fetcher,
   );
+
+  const [desc, setDesc] = React.useState("");
+
+  const handleSubmit = async () => {
+    await fetch("/api/comments", {
+      method: "POST",
+      body: JSON.stringify({ desc, postSlug }),
+    });
+    mutate();
+
+    setDesc("");
+  };
+
   return (
     <div className="mt-14">
       <h1 className="mb-7 text-4xl text-gray-500">Comments</h1>
@@ -29,9 +42,14 @@ const Comments = ({ postSlug }) => {
         <div className="flex items-center justify-between gap-7">
           <textarea
             placeholder="Write a comment..."
-            className="w-full rounded-2xl p-4"
+            className="w-full rounded-2xl border border-teal-300 bg-transparent p-4"
+            onChange={(e) => setDesc(e.target.value)}
+            value={desc}
           />
-          <button className="rounded-lg border-none bg-teal-500 px-3 py-1 font-bold">
+          <button
+            onClick={handleSubmit}
+            className="rounded-lg border-none bg-teal-500 px-3 py-1 font-bold"
+          >
             Send
           </button>
         </div>
