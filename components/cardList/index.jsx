@@ -2,10 +2,13 @@ import React from "react";
 import Pagination from "../pagination";
 import Card from "../card";
 
-const getData = async (page) => {
-  const res = await fetch(`http://localhost:3000/api/posts?page=${page}`, {
-    cache: "no-store",
-  });
+const getData = async (page, cat) => {
+  const res = await fetch(
+    `http://localhost:3000/api/posts?page=${page}&cat=${cat || ""}`,
+    {
+      cache: "no-store",
+    },
+  );
 
   if (!res.ok) {
     throw new Error("Something went wrong");
@@ -14,15 +17,13 @@ const getData = async (page) => {
   return res.json();
 };
 
-const CardList = async ({ page }) => {
-  const { posts, count } = await getData(page);
+const CardList = async ({ page, cat }) => {
+  const { posts, count } = await getData(page, cat);
 
   const POST_PER_PAGE = 2;
 
   const hasPrev = POST_PER_PAGE * (page - 1) > 0;
   const hasNext = POST_PER_PAGE * (page - 1) + POST_PER_PAGE < count;
-
-  console.log(posts);
 
   return (
     <div className="flex-[5]">
