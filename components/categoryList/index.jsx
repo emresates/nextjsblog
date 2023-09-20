@@ -3,10 +3,10 @@ import Link from "next/link";
 import React from "react";
 
 const getData = async () => {
-  const res = await fetch("https://secenoryblog.vercel.app/api/categories", {
+  const res = await fetch(`${process.env.API_URL}/categories`, {
     cache: "no-store",
   });
-
+  
   if (!res.ok) {
     throw new Error("Something went wrong");
   }

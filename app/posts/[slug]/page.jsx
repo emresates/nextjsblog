@@ -4,9 +4,10 @@ import Image from "next/image";
 import React from "react";
 
 const getData = async (slug) => {
-  const res = await fetch(`https://secenoryblog.vercel.app/api/posts/${slug}`, {
+  const res = await fetch(`${process.env.API_URL}/posts/${slug}`, {
     cache: "no-store",
   });
+  console.log(process.env.API_URL);
 
   if (!res.ok) {
     throw new Error("Something went wrong");

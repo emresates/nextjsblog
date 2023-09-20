@@ -19,7 +19,7 @@ const fetcher = async (url) => {
 const Comments = ({ postSlug }) => {
   const { status } = useSession();
   const { data, mutate, isLoading } = useSWR(
-    `https://secenoryblog.vercel.app/api/comments?postSlug=${postSlug}`,
+    `${process.env.API_URL}/comments?postSlug=${postSlug}`,
     fetcher,
   );
 
@@ -59,7 +59,7 @@ const Comments = ({ postSlug }) => {
       <div className="mt-8">
         {isLoading
           ? "Loading"
-          : data.map((comment) => (
+          : data?.map((comment) => (
               <div className="mb-8" key={comment.id}>
                 <div className="mb-4 flex items-center gap-4">
                   <div className="relative h-12 w-12">

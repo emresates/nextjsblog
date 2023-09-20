@@ -8,7 +8,7 @@ export const GET = async (req, res) => {
   const page = searchParams.get("page") || 1;
   const cat = searchParams.get("cat");
 
-  const POST_PER_PAGE = 2;
+  const POST_PER_PAGE = 3;
 
   const query = {
     take: POST_PER_PAGE,
@@ -23,6 +23,7 @@ export const GET = async (req, res) => {
       prisma.post.findMany(query),
       prisma.post.count({ where: query.where }),
     ]);
+    console.log(posts);
 
     return new NextResponse(JSON.stringify({ posts, count }), { status: 200 });
   } catch (error) {

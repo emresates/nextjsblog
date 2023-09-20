@@ -4,7 +4,7 @@ import Card from "../card";
 
 const getData = async (page, cat) => {
   const res = await fetch(
-    `https://secenoryblog.vercel.app/api/posts?page=${page}&cat=${cat || ""}`,
+    `${process.env.API_URL}/posts?page=${page}&cat=${cat || ""}`,
     {
       cache: "no-store",
     },
@@ -24,6 +24,8 @@ const CardList = async ({ page, cat }) => {
 
   const hasPrev = POST_PER_PAGE * (page - 1) > 0;
   const hasNext = POST_PER_PAGE * (page - 1) + POST_PER_PAGE < count;
+  console.log("cardlist", cat);
+  console.log(posts);
 
   return (
     <div className="flex-[5]">
@@ -33,7 +35,7 @@ const CardList = async ({ page, cat }) => {
           <Card key={item.id} item={item} />
         ))}
       </div>
-      <Pagination page={page} hasPrev={hasPrev} hasNext={hasNext} />
+      <Pagination page={page} hasPrev={hasPrev} hasNext={hasNext} cat={cat} />
     </div>
   );
 };
