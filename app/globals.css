@@ -25,3 +25,29 @@ a {
 .quill > .ql-container > .ql-editor.ql-blank::before {
   color: #b3b3b1;
 }
+
+h1 {
+  font-size: 4rem;
+  line-height: 4rem;
+  font-weight: 400;
+}
+
+blockquote {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 40px;
+  margin-right: 40px;
+  font-style: italic;
+  position: relative;
+}
+
+blockquote::before {
+  content: "";
+  width: 2px;
+  height: 100%;
+  position: absolute;
+  left: -2%;
+  top: 0;
+  background: gray;
+}

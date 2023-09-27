@@ -24,8 +24,6 @@ const CardList = async ({ page, cat }) => {
 
   const hasPrev = POST_PER_PAGE * (page - 1) > 0;
   const hasNext = POST_PER_PAGE * (page - 1) + POST_PER_PAGE < count;
-  console.log("cardlist", cat);
-  console.log(posts);
 
   return (
     <div className="flex-[5]">

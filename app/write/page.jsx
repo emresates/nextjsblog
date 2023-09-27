@@ -32,7 +32,6 @@ const Write = () => {
   useEffect(() => {
     const upload = () => {
       const name = new Date().getTime() + "-" + file.name + Math.random();
-      console.log(name);
       const storageRef = ref(storage, name);
 
       const uploadTask = uploadBytesResumable(storageRef, file);
@@ -88,7 +87,7 @@ const Write = () => {
         description: value,
         image: media,
         slug: slugify(title),
-        catSlug: "travel",
+        catSlug: "coding",
       }),
     });
     console.log(res);

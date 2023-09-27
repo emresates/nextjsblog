@@ -7,7 +7,6 @@ const getData = async (slug) => {
   const res = await fetch(`${process.env.API_URL}/posts/${slug}`, {
     cache: "no-store",
   });
-  console.log(process.env.API_URL);
 
   if (!res.ok) {
     throw new Error("Something went wrong");
