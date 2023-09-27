@@ -7,8 +7,15 @@ export const GET = async (req, res) => {
 
   const page = searchParams.get("page") || 1;
   const cat = searchParams.get("cat");
+  const order = searchParams.get("order");
+  const user = searchParams.get("user");
 
-  const POST_PER_PAGE = 3;
+  const orderBy = order === "views" ? { views: "desc" } : {};
+  const includeUser = user ? { user: true } : {};
+
+  const POST_PER_PAGE = 4;
+
+  console.log(includeUser);
 
   const query = {
     take: POST_PER_PAGE,
@@ -16,6 +23,8 @@ export const GET = async (req, res) => {
     where: {
       ...(cat && { catSlug: cat }),
     },
+    orderBy: orderBy,
+    include: includeUser,
   };
 
   try {

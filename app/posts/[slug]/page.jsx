@@ -27,10 +27,10 @@ const SinglePage = async ({ params }) => {
           <div className="relative my-4 h-56 flex-1 md:my-0 md:h-80">
             <Image
               src={data.image}
-              alt=""
+              alt={data.title}
               fill
               className="rounded-3xl object-cover"
-              sizes="200px"
+              sizes="600px"
             />
           </div>
         )}
